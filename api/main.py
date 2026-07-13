@@ -4,8 +4,6 @@ import pandas as pd
 import joblib
 
 
-# Load trained model
-
 model = joblib.load(
     "models/churn_model.joblib"
 )
@@ -17,35 +15,27 @@ app = FastAPI(
 )
 
 
-
-# Input schema
-
 class CustomerData(BaseModel):
-
     Age: int
-
+    
     Gender: str
-
+    
     Tenure: int
-
+    
     Usage_Frequency: int
-
+    
     Support_Calls: int
-
+    
     Payment_Delay: int
-
+    
     Subscription_Type: str
-
+    
     Contract_Length: str
-
+    
     Total_Spend: float
-
+    
     Last_Interaction: int
-
-
-
-# Home route
-
+    
 @app.get("/")
 def home():
 
